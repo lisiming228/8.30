@@ -51,12 +51,12 @@
 <!--        <a href="">链接2</a>-->
 <!--        <a href="">链接3</a>-->
         {foreach $silbing as $v}
-        <a href="/mvc2/index.php/index/lists?cid={$v['cid']}">{$v["cname"]}</a>
+        <a href="/phpstudytest/mvc2/index.php/index/lists?cid={$v['cid']}">{$v["cname"]}</a>
         {/foreach}
     </h3>
     <div class="list-box">
         {foreach $condata as $v}
-        <a href="/mvc2/index.php/index/show?conid={$v['conid']}" class="list">
+        <a href="/phpstudytest/mvc2/index.php/index/show?conid={$v['conid']}" class="list">
             <img src="{$v['imgurl']}" alt="" height="100">
             <h4>{$v["ctitle"]}</h4>
             <div class="news-info">

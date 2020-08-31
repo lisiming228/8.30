@@ -44,7 +44,7 @@ class category{
         }
     }
     function show(){
-       $cid=$_GET["cid"];
+        $cid=$_GET["cid"];
         $database=new db();
         $db=$database->db;
         $result=$db->query("select * from mvc_category where cid=".$cid);
@@ -83,7 +83,8 @@ class category{
         }else{
             $cid=0;
         }
-        $path=$_POST["imgurl"];
+//        $path=$_POST["imgurl"];
+        $path=str_replace("\\","/",$_POST["imgurl"]);
         $cname=$_POST["cname"];
         $isshow=$_POST["isshow"];
         $tpl_name=$_POST["tpl_name"];
@@ -125,7 +126,6 @@ class category{
         $imgurl=$_GET["imgurl"];
         $database=new db();
         $db=$database->db;
-
         $db->query("update mvc_category set cname='{$cname}',pid={$pid},isshow=$isshow,info='$info',tpl_name='$tpl_name',imgurl='{$imgurl}' where cid=".$cid);
         if($db->affected_rows>0){
             echo "ok";

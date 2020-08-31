@@ -1,28 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>铭辉安防仿写练习</title>
     <link rel="stylesheet" href="{CSS_ADD}index\common.css">
-    <style>
-        .main-content img{
-            border: 0;
-            vertical-align: bottom;
-            width: 100%;
-            margin-bottom:40px;
-        }
-        .main-content p{
-            font-size: 16px;
-            line-height: 2;
-        }
-    </style>
 </head>
 <body>
+<style>
+    main{
+        height:1200px;
+    }
+    .main-content img{
+        border: 0;
+        vertical-align: bottom;
+        width: 100%;
+        margin-bottom:40px;
+    }
+    .main-content p{
+        font-size: 16px;
+        line-height: 2;
+    }
+</style>
+
 {include file=$header}
-<div class="top-poster bgx" ura="{$currentInfo['imgurl']}">
+
+<div class="top-poster bgx" ura="{$parentInfo['imgurl']}">
     <div class="top-poster-text">
-        <div class="top-poster-text1">{$currentInfo["info"]}</div>
-        <div>{$currentInfo["exp"]}</div>
+        <div class="top-poster-text1">{$parentInfo["info"]}</div>
+        <div>{$parentInfo["exp"]}</div>
     </div>
 </div>
 <main>
@@ -33,13 +41,15 @@
                 <span></span>
                 <span></span>
             </div>
-            <div class="main-left-content">{$currentInfo["cname"]}</div>
+            <div class="main-left-content">{$parentInfo["cname"]}</div>
         </div>
         <ul class="main-left-list">
-            {foreach $soninfo as $v}
-                <li>
-                    <a href="/phpStudyTest/mvc2/index.php/index/lists?cid={$v['cid']}">{$v["cname"]}</a>
-                </li>
+            {foreach $silbing as $v}
+            <li>
+                <a href="/phpStudyTest/mvc2/index.php/index/lists?cid={$v['cid']}">
+                    <img src="{IMG_ADD}icon11.png">{$v["cname"]}
+                </a>
+            </li>
             {/foreach}
         </ul>
         <div class="main-left-bottom">
@@ -51,19 +61,23 @@
     </div>
     <div class="main-right">
         <div class="main-right-title">
-            <div class="main-right-title-content">{$currentInfo["cname"]}</div>
+            <div class="main-right-title-content">{$parentInfo["cname"]}</div>
             <div class="main-title-location">
                 您的当前位置：
                 <a href="index.html">网站首页 </a>/
-                <a href="about.html">{$currentInfo["cname"]} </a>/
+                <a href="about.html">{$parentInfo["cname"]} </a>/
                 <a href="about.html">{$currentInfo["cname"]}</a>
 
             </div>
         </div>
         <div class="main-content">
-            {$coninfo[0][0]['cons']}
+            <!--{foreach $condata as $v}-->
+                    <!--{$v["cons"]}-->
+            <!--{/foreach}-->
+            {$condata[0]["cons"]}
         </div>
     </div>
+
 </main>
 {include file=$footer}
 <script>

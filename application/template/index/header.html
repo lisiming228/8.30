@@ -16,12 +16,13 @@
             </li>
             {foreach $menuData as $v}
             <li>
+
                 <a href="/phpStudyTest/mvc2/index.php/index/category?cid={$v['cid']}">{$v["cname"]}</a>
                 {if isset($v["child"])}
                 <ul class="son">
                     {foreach $v["child"] as $v1}
                     <li>
-                        <a href="/phpStudyTest/mvc2/index.php/index/lists?cid=${$v1['cid']}">
+                        <a href="/phpStudyTest/mvc2/index.php/index/lists?cid={$v1['cid']}">
                             {$v1["cname"]}
                         </a>
                     </li>

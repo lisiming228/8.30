@@ -15,7 +15,9 @@ class content{
         $cid=$_POST["cid"];
         $ctitle=$_POST["ctitle"];
         $cons=$_POST["cons"];
-        $imgurl=$_POST["imgurl"];
+//        $imgurl=$_POST["imgurl"];
+        $imgurl=str_replace("\\","/",$_POST["imgurl"]);
+        echo $imgurl;
         $info=$_POST["info"];
 
         $database=new db();
@@ -83,7 +85,8 @@ class content{
         $cid=$_POST["cid"];
         $ctitle=$_POST["ctitle"];
         $cons=$_POST["cons"];
-        $imgurl=$_POST["imgurl"];
+//        $imgurl=$_POST["imgurl"];
+        $imgurl=str_replace("\\","/",$_POST["imgurl"]);
         $info=$_POST["info"];
         $database=new db();
         $db=$database->db;

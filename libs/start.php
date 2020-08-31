@@ -49,7 +49,8 @@ define("JS_ADD",str_replace("\\","/",STATIC_ADD."js".DIRECTORY_SEPARATOR));
 //font的地址
 define("FONT_ADD",STATIC_ADD."font".DIRECTORY_SEPARATOR);
 //image的地址
-define("IMG_ADD",STATIC_ADD."img".DIRECTORY_SEPARATOR);
+define("IMG_ADD",str_replace("\\","/",STATIC_ADD."img".DIRECTORY_SEPARATOR));
+//define("IMG_ADD",STATIC_ADD."img".DIRECTORY_SEPARATOR);
 
 
 //路由的概念

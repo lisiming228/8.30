@@ -25,7 +25,7 @@ class code{
         $this->lineNum=$config["code"]["lineNUm"]?$config["code"]["lineNum"]:array("min"=>2,"max"=>4);
         $this->lineWidth=$config["code"]["lineWidth"]?$config["code"]["lineWidth"]:array("min"=>1,"max"=>3);
         $this->pixNum=$config["code"]["pixNum"]?$config["code"]["pixNum"]:array("min"=>80,"max"=>150);
-        $this->fontFile=$config["code"]["fontFile"]?$config["code"]["fontFile"]:"/Users/chaimengxin/Documents/php/service/mvc2/application/static/font/demo.ttc";
+        $this->fontFile=$config["code"]["fontFile"]?$config["code"]["fontFile"]:"/phpstudytest/mvc2/application/static/font/demo.ttc";
     }
     private function createCanvas(){
         $this->image=imagecreatetruecolor($this->width,$this->height);
